@@ -1,0 +1,317 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #111;
+    line-height: 1.5;
+}
+
+header {
+    background: #0b3b2e;
+    color: #fff;
+    padding: 12px 0;
+}
+
+.header-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-inner img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.header-text .line1 { 
+    font-weight: 700; 
+    font-size: 16px; 
+}
+.header-text .line2 { 
+    font-size: 13px; 
+    opacity: .9; 
+}
+
+main {
+    width: min(1100px, 92vw);
+    margin: 16px auto 0 auto;
+    padding: 16px;
+    background: #eeeeee;
+    color: #000;
+    border-radius: 14px;
+    min-height: calc(100vh - 140px);
+    padding-bottom: 80px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #0b3b2e;
+}
+
+h2 {
+    margin: 20px 0 10px 0;
+    font-size: 18px;
+    color: #1a5f4a;
+    border-bottom: 2px solid #0b3b2e;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin: 15px 0 8px 0;
+    font-size: 16px;
+    color: #2d7a63;
+}
+
+.code-note {
+    margin: 0 0 14px 0;
+    font-size: 14px;
+    color: #333;
+    background: #f8f9fa;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid #0b3b2e;
+}
+
+.code-note.success {
+    background: #d4edda;
+    border-left-color: #28a745;
+    color: #155724;
+}
+
+.code-note.error {
+    background: #f8d7da;
+    border-left-color: #dc3545;
+    color: #721c24;
+}
+
+footer {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: #2b2b2b;
+    color: #d7d7d7;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+}
+
+/* Таблицы */
+.tableD {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tableD th, .tableD td {
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    vertical-align: middle;
+}
+
+.tableD th {
+    background: #0b3b2e;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tableD td.element_index {
+    background: #f1f5f4;
+    font-weight: 600;
+    text-align: center;
+    width: 60px;
+}
+
+.tableD input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.tableD input[type="text"]:focus {
+    outline: none;
+    border-color: #0b3b2e;
+    box-shadow: 0 0 0 2px rgba(11, 59, 46, 0.2);
+}
+
+/* Блоки элементов */
+.blocksE {
+    display: block;
+    overflow: hidden;
+    padding-top: 6px;
+    margin: 10px 0;
+}
+
+.blockE {
+    float: left;
+    border: 2px solid #0b3b2e;
+    padding: 10px 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    min-width: 150px;
+    border-radius: 8px;
+}
+
+.blockE label {
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.blockE select,
+.blockE input[type="button"],
+.blockE input[type="submit"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.blockE select:focus,
+.blockE input[type="button"]:hover,
+.blockE input[type="submit"]:hover {
+    border-color: #0b3b2e;
+    background: #f1f5f4;
+}
+
+.blockE input[type="button"],
+.blockE input[type="submit"] {
+    background: #0b3b2e;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+}
+
+.blockE input[type="button"]:hover,
+.blockE input[type="submit"]:hover {
+    background: #082a21;
+}
+
+/* Блоки с элементами массива */
+.blockE.sorted {
+    border-color: #28a745;
+    background: #f0fff4;
+}
+
+/* Статистика */
+.stats {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #d7d7d7;
+}
+
+.stats p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.stats p strong {
+    color: #0b3b2e;
+    min-width: 140px;
+    display: inline-block;
+}
+
+/* Лог итераций */
+.iteration-log {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 10px 0;
+}
+
+.iteration {
+    font-family: monospace;
+    font-size: 13px;
+    padding: 4px 8px;
+    margin: 2px 0;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #0b3b2e;
+}
+
+/* Ссылки */
+a {
+    color: #0b3b2e;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .blockE {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .blocksE {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Для печати */
+@media print {
+    header, footer, .blocksE:not(:last-child) {
+        display: none;
+    }
+    
+    main {
+        background: #fff;
+        padding: 0;
+        min-height: auto;
+    }
+    
+    .tableD, .blockE {
+        border-color: #000;
+    }
+}

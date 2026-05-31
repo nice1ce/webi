@@ -1,0 +1,339 @@
+/* =========================================
+   БАЗОВЫЕ НАСТРОЙКИ И СБРОС
+   ========================================= */
+* {
+    box-sizing: border-box; /* Важно: отступы не увеличивают ширину элементов */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f4f4; /* Чуть темнее белого, чтобы main выделялся */
+    color: #111;
+    min-height: 100vh;
+    padding-bottom: 70px; /* Отступ под фиксированный футер */
+}
+
+/* =========================================
+   ШАПКА (HEADER) - ИЗ ВАШЕГО ШАБЛОНА
+   ========================================= */
+header {
+    background: #0b3b2e; /* Темно-зеленый */
+    color: #fff;
+    padding: 12px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-inner img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    background: #fff; /* На случай прозрачного лого */
+    border-radius: 50%;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.header-text .line1 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.header-text .line2 {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* =========================================
+   ОСНОВНОЙ КОНТЕЙНЕР (MAIN)
+   ========================================= */
+main {
+    width: min(1100px, 92vw);
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    color: #000;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    /* overflow: hidden; - Убрано, чтобы скролл таблицы работал внутри */
+}
+
+h1 {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    color: #0b3b2e;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* =========================================
+   МЕНЮ (MENU)
+   ========================================= */
+#menu {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* Стили ссылок меню (синие по заданию) */
+#menu a {
+    text-decoration: none;
+    color: #0055cc; /* Синий цвет */
+    padding: 8px 12px;
+    margin-right: 5px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+#menu a:hover {
+    background: #eef4ff;
+}
+
+/* Активный пункт (красный по заданию) */
+#menu a.selected {
+    color: #d32f2f; /* Красный */
+    font-weight: bold;
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+}
+
+/* Подменю сортировки (должно быть меньше) */
+#submenu {
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+#submenu a {
+    font-size: 14px; /* Меньше основного */
+    color: #666;
+    padding: 4px 8px;
+}
+
+#submenu a.selected {
+    color: #d32f2f;
+}
+
+/* =========================================
+   ФОРМЫ (ADD / EDIT) - ИСПРАВЛЕНИЕ НАСЛОЕНИЯ
+   ========================================= */
+.contact-form {
+    max-width: 600px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+/* Все поля ввода делаем блочными и друг под другом */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="date"],
+.contact-form input[type="number"],
+.contact-form select,
+.contact-form textarea {
+    display: block; /* Главное исправление: каждый элемент на новой строке */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; /* Отступ снизу */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Кнопку делаем по ширине контента, а не на всю ширину */
+.contact-form input[type="submit"] {
+    width: auto;
+    padding: 10px 25px;
+    background: #0b3b2e;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.contact-form input[type="submit"]:hover {
+    background: #082a20;
+}
+
+/* =========================================
+   ТАБЛИЦЫ (VIEWER) - ИСПРАВЛЕНИЕ ВЫХОДА ЗА ГРАНИЦЫ
+   ========================================= */
+/* Обертка для таблицы, чтобы был скролл */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Горизонтальный скролл, если таблица широкая */
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    min-width: 900px; /* Минимальная ширина, чтобы ячейки не сплющивались */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 13px;
+}
+
+table th {
+    background: #0b3b2e;
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap; /* Заголовки не переносятся */
+}
+
+/* Чередование цветов строк */
+table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Сообщения об успехе/ошибке */
+.msg {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.msg.ok {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.msg.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* =========================================
+   ПАГИНАЦИЯ
+   ========================================= */
+#pagination {
+    margin-top: 15px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+#pagination a, #pagination span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+    color: #0055cc;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+#pagination a:hover {
+    border: 2px solid #0055cc;
+    width: 30px; height: 30px; /* Компенсация толщины рамки */
+}
+
+#pagination span.current {
+    background: #0b3b2e;
+    color: #fff;
+    border: 1px solid #0b3b2e;
+    font-weight: bold;
+}
+
+/* =========================================
+   СПИСКИ (EDIT / DELETE)
+   ========================================= */
+#edit-links, #delete-links {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+#edit-links a, #delete-links a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+}
+
+#edit-links a:hover, #delete-links a:hover {
+    background: #e3f2fd;
+    border-color: #0055cc;
+}
+
+/* Выделение текущей записи при редактировании */
+#edit-links .current-item {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    background: #ffe082;
+    border: 1px solid #ffca28;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* =========================================
+   ФУТЕР (FOOTER) - ИЗ ВАШЕГО ШАБЛОНА
+   ========================================= */
+footer {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: #2b2b2b;
+    color: #d7d7d7;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.footer-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+}
