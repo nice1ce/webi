@@ -1,0 +1,284 @@
+/* ================= БАЗОВЫЕ СТИЛИ ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ================= ШАПКА ================= */
+header {
+    background: #0b3b2e;
+    color: #fff;
+    padding: 12px 0;
+}
+
+.header-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-inner img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.header-text .line1 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.header-text .line2 {
+    font-size: 13px;
+    opacity: .9;
+}
+
+/* ================= ГЛАВНОЕ МЕНЮ ================= */
+#main_menu {
+    background: #1a5242;
+    padding: 8px 0;
+    text-align: center;
+}
+
+#main_menu a {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 4px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+#main_menu a:hover {
+    background: #2a725e;
+    color: #FF0;
+}
+
+#main_menu a.selected {
+    background: #0d4d3a;
+    font-weight: bold;
+    color: #0FF;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* ================= ОСНОВНОЙ КОНТЕЙНЕР ================= */
+.main-container {
+    width: min(1100px, 92vw);
+    margin: 16px auto 0 auto;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    flex: 1;
+}
+
+/* ================= ОСНОВНОЕ МЕНЮ (САЙДБАР) ================= */
+#product_menu {
+    width: 150px;
+    flex-shrink: 0;
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #ddd;
+}
+
+#product_menu a {
+    display: block;
+    padding: 8px 12px;
+    color: #111;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    text-align: center;
+    font-weight: 500;
+}
+
+#product_menu a:hover {
+    background: #ddd;
+    color: #0b3b2e;
+}
+
+#product_menu a.selected {
+    background: #0b3b2e;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ================= ОБЛАСТЬ С ТАБЛИЦЕЙ ================= */
+.table-area {
+    flex: 1;
+    min-width: 0;
+    background: #eeeeee;
+    color: #000;
+    border-radius: 14px;
+    padding: 16px;
+    min-height: calc(100vh - 200px);
+}
+
+.table-area h1 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #0b3b2e;
+}
+
+/* ================= ТАБЛИЧНАЯ ВЕРСТКА ================= */
+.tableD {
+    border-collapse: collapse;
+    width: 100%;
+    background: #fff;
+    table-layout: fixed;
+    font-size: 14px;
+}
+
+.tableD th,
+.tableD td {
+    border: 1px solid #000;
+    padding: 6px 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tableD th {
+    background: #37e2b4;
+    color: #fff;
+    font-weight: 600;
+}
+
+.tableD tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.tableD td.single-cell {
+    font-size: 1.4em;
+    text-align: center;
+    padding: 10px 12px;
+}
+
+/* ================= БЛОЧНАЯ ВЕРСТКА ================= */
+.blocksE {
+    display: block;
+    overflow: hidden;
+    padding-top: 6px;
+}
+
+.blockE {
+    float: left;
+    border: 2px solid #0b3b2e;
+    padding: 8px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background: #fff;
+    min-width: 140px;
+    border-radius: 6px;
+    transition: box-shadow 0.2s;
+}
+
+.blockE:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.blockE.single-column {
+    font-size: 1.3em;
+    min-width: 220px;
+    float: none;
+    text-align: center;
+}
+
+/* ================= ССЫЛКИ НА ЦИФРЫ В ТАБЛИЦЕ ================= */
+.table-area a {
+    color: #0b3b2e;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted #0b3b2e;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.table-area a:hover {
+    color: #FF0;
+    border-bottom-color: #FF0;
+    background: rgba(255, 255, 0, 0.1);
+    border-radius: 2px;
+}
+
+/* ================= ПОДВАЛ ================= */
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b2b2b;
+    color: #d7d7d7;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+.footer-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+}
+
+/* ================= АДАПТИВНОСТЬ ================= */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    #product_menu {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #product_menu a {
+        min-width: 40px;
+        margin: 2px;
+    }
+
+    .blockE {
+        min-width: 120px;
+        font-size: 0.95em;
+    }
+
+    .tableD td {
+        font-size: 0.9em;
+        padding: 4px 6px;
+    }
+}
+
+/* ================= УТИЛИТЫ ================= */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.thead_vse{
+    color: aqua;
+}

@@ -1,0 +1,360 @@
+/* ===== БАЗОВЫЕ НАСТРОЙКИ ===== */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: #ffffff;
+    color: #111;
+    line-height: 1.5;
+}
+
+/* ===== ШАПКА ===== */
+header {
+    background: #0b3b2e;
+    color: #fff;
+    padding: 12px 0;
+}
+
+.header-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-inner img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.header-text .line1 { font-weight: 700; font-size: 16px; }
+.header-text .line2 { font-size: 13px; opacity: 0.9; }
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+main {
+    width: min(1100px, 92vw);
+    margin: 16px auto 0 auto;
+    padding: 20px;
+    background: #eeeeee;
+    color: #000;
+    border-radius: 14px;
+    min-height: calc(100vh - 140px);
+    padding-bottom: 80px;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    color: #0b3b2e;
+    border-bottom: 2px solid #0b3b2e;
+    padding-bottom: 10px;
+}
+
+/* ===== ФОРМА ===== */
+.test-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.form-row {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.form-row label {
+    min-width: 220px;
+    font-weight: 500;
+    padding-top: 8px;
+    text-align: left;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row select,
+.form-row textarea {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: #0b3b2e;
+    box-shadow: 0 0 0 3px rgba(11, 59, 46, 0.15);
+}
+
+.form-row textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Три поля в ряд для A, B, C */
+.form-row.triple {
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.form-row.triple > div {
+    flex: 1;
+    min-width: 120px;
+}
+
+.form-row.triple label {
+    display: block;
+    min-width: auto;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.form-row.triple input {
+    max-width: 100%;
+}
+
+/* Чекбокс */
+.checkbox-row {
+    align-items: center;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-row label {
+    min-width: auto;
+    padding-top: 0;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* Скрытая строка email */
+.email-row {
+    background: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 3px solid #0b3b2e;
+    margin-left: 232px;
+    align-items: center;
+}
+
+.email-row label {
+    min-width: 220px;
+    padding-top: 0;
+}
+
+.email-row input {
+    max-width: 300px;
+}
+
+/* Кнопка в виде ссылки <a> */
+.form-actions {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.btn-submit,
+.btn-repeat {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0b3b2e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 2px solid #0b3b2e;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-submit:hover,
+.btn-repeat:hover {
+    background: #072a21;
+    border-color: #072a21;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 59, 46, 0.3);
+}
+
+.btn-submit:active,
+.btn-repeat:active {
+    transform: translateY(0);
+}
+
+/* ===== ОТЧЁТ ===== */
+.report-container {
+    background: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.report-block {
+    margin-bottom: 20px;
+}
+
+.report-block p {
+    margin: 8px 0;
+    padding: 6px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.report-block p:last-child {
+    border-bottom: none;
+}
+
+.result-success {
+    color: #1b7f4e;
+    font-size: 18px;
+    background: #e8f5e9;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #1b7f4e;
+}
+
+.result-error {
+    color: #c62828;
+    font-size: 18px;
+    background: #ffebee;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #c62828;
+}
+
+.result-warning {
+    color: #f57c00;
+    background: #fff3e0;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #f57c00;
+}
+
+/* Сообщение о нерешённой задаче (требование ЛР6.pdf) */
+.not-solved {
+    color: #f57c00;
+    font-style: italic;
+    background: #fff3e0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-left: 3px solid #f57c00;
+}
+
+.email-notice {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 4px solid #1565c0;
+    margin: 20px 0;
+}
+
+.repeat-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 2px solid #0b3b2e;
+    text-align: center;
+}
+
+/* ===== РЕЖИМ ПЕЧАТИ ===== */
+.print-mode {
+    background: #fff !important;
+    border: none !important;
+    padding: 10px !important;
+}
+
+@media print {
+    header, footer, .form-actions, .repeat-section, .btn-submit, .btn-repeat {
+        display: none !important;
+    }
+    main {
+        margin: 0;
+        padding: 0;
+        background: #fff !important;
+        min-height: auto;
+    }
+    .report-container {
+        border: none;
+        padding: 0;
+    }
+    .report-block p {
+        border-bottom: 1px solid #000;
+    }
+}
+
+/* ===== ПОДВАЛ ===== */
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b2b2b;
+    color: #d7d7d7;
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-inner {
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 13px;
+    padding: 0 16px;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-row label {
+        min-width: auto;
+        padding-top: 0;
+        margin-bottom: 6px;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+        max-width: 100%;
+    }
+
+    .email-row {
+        margin-left: 0;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
